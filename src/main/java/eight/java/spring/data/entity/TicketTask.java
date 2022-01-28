@@ -2,10 +2,8 @@ package eight.java.spring.data.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class TicketTask {
@@ -18,6 +16,15 @@ public class TicketTask {
     private String descriptions;
     @Column
     private boolean isSolved;
+
+    @Column(nullable = true)
+    private Float latitude;
+
+    @Column(nullable = true)
+    private Float longitude;
+
+    @ManyToMany
+    private List<TeamSolver> teamSolverList;
 
     public Long getId() {
         return id;
@@ -49,5 +56,29 @@ public class TicketTask {
 
     public void setSolved(boolean solved) {
         isSolved = solved;
+    }
+
+    public List<TeamSolver> getTeamSolverList() {
+        return teamSolverList;
+    }
+
+    public void setTeamSolverList(List<TeamSolver> teamSolverList) {
+        this.teamSolverList = teamSolverList;
+    }
+
+    public Float getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(Float latitude) {
+        this.latitude = latitude;
+    }
+
+    public Float getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(Float longitude) {
+        this.longitude = longitude;
     }
 }
