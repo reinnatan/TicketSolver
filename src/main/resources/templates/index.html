@@ -43,22 +43,14 @@
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
     <script>
     function format ( d ) {
-        console.log(d);
-        // `d` is the original data object for the row
-        return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
-            '<tr>'+
-                '<td>Full name:</td>'+
-                '<td>'+d.name+'</td>'+
-            '</tr>'+
-            '<tr>'+
-                '<td>Extension number:</td>'+
-                '<td>'+d.extn+'</td>'+
-            '</tr>'+
-            '<tr>'+
-                '<td>Extra info:</td>'+
-                '<td>And any further details here (images etc)...</td>'+
-            '</tr>'+
-        '</table>';
+        var rowData = '';
+        for(var x=0; x<d.length; x++){
+            rowData = rowData +
+            '<tr><td>'+d[x].id+'</td>'+'<td>'+d[x].name+'</td>'+'<td>'+d[x].gender+'</td></tr>';
+        }
+
+        return '<strong>Team Members</stong><table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
+        '<thead><th>ID</th><th>Name</th><th>Gender</th><thead><tbody>'+rowData+'</tbody></table>';
     }
 
 
@@ -83,22 +75,26 @@
 
         $('#ticketTaskTable tbody').on('click', 'td.dt-control', function(){
             var id = $(this).next().text();
-            console.log(id);
-            /*
             var tr = $(this).closest('tr');
             var row = table.row( tr );
 
-            if ( row.child.isShown() ) {
-                // This row is already open - close it
-                row.child.hide();
-                tr.removeClass('shown');
-            }
-            else {
-                // Open this row
-                row.child( format(row.data()) ).show();
-                tr.addClass('shown');
-            }
-            */
+            //console.log(id);
+            $.get("/ticket-task/"+id, function(data, status){
+
+                if ( row.child.isShown() ) {
+                    // This row is already open - close it
+                    row.child.hide();
+                    tr.removeClass('shown');
+                }
+                else {
+                    // Open this row
+                    var data = format(data.teamSolverList);
+                    //console.log(data);
+                    row.child(data).show();
+                    tr.addClass('shown');
+                }
+            });
+
         });
     });
 

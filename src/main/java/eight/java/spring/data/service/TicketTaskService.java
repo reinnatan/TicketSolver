@@ -22,6 +22,13 @@ public class TicketTaskService {
         return ticketTaskRepository.findAll();
     }
 
+    public TicketTask getDetailTicketTask(Long id){
+        if (ticketTaskRepository.findById(id).isPresent()){
+            return ticketTaskRepository.findById(id).get();
+        }
+        return null;
+    }
+
     public TicketTaskResponse addTicket(TicketTaskRequest ticketTaskRequest){
         TicketTask ticketTask = new TicketTask();
         ticketTask.setDescriptions(ticketTaskRequest.getDescriptions());

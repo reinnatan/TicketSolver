@@ -32,6 +32,17 @@ public class TicketTaskAPIController {
         return ResponseEntity.ok(map);
     }
 
+    //detail teamsolver
+    @GetMapping("/ticket-task/{id}")
+    public ResponseEntity getDetailTicketTask(@PathVariable("id") Long id){
+        TicketTask detailTask = ticketTaskService.getDetailTicketTask(id);
+        if (detailTask ==null){
+            return ResponseEntity.notFound().build();
+        }else{
+            return ResponseEntity.ok(detailTask);
+        }
+    }
+
     @PostMapping("/ticket-task")
     public ResponseEntity<TicketTaskResponse> saveTicketTask(@RequestBody TicketTaskRequest ticketTaskRequest){
         TicketTaskResponse response =  ticketTaskService.addTicket(ticketTaskRequest);
