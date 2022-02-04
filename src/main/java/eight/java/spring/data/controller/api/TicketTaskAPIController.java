@@ -1,5 +1,6 @@
 package eight.java.spring.data.controller.api;
 
+import com.sun.mail.iap.Response;
 import eight.java.spring.data.entity.TicketTask;
 import eight.java.spring.data.request.ticket.TicketTaskRequest;
 import eight.java.spring.data.request.ticket.UpdateTicketTaskStatusRequest;
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
 
 @RestController
@@ -21,6 +23,13 @@ public class TicketTaskAPIController {
     @GetMapping("/ticket-tasks")
     public List<TicketTask> getTicketTask(){
         return ticketTaskService.getAllTicketTasks();
+    }
+
+    @GetMapping("/ticket-tasks-view")
+    public ResponseEntity getTicketTaskView(){
+        HashMap<String, List<TicketTask>> map = new HashMap<String, List<TicketTask>>();
+        map.put("data",ticketTaskService.getAllTicketTasks());
+        return ResponseEntity.ok(map);
     }
 
     @PostMapping("/ticket-task")
