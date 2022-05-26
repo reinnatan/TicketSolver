@@ -20,11 +20,13 @@ public class TicketTaskAPIController {
     @Autowired
     TicketTaskService ticketTaskService;
 
+    //get ticket task-api
     @GetMapping("/ticket-tasks")
     public List<TicketTask> getTicketTask(){
         return ticketTaskService.getAllTicketTasks();
     }
 
+    //get ticket-for view html
     @GetMapping("/ticket-tasks-view")
     public ResponseEntity getTicketTaskView(){
         HashMap<String, List<TicketTask>> map = new HashMap<String, List<TicketTask>>();
@@ -32,7 +34,7 @@ public class TicketTaskAPIController {
         return ResponseEntity.ok(map);
     }
 
-    //detail teamsolver
+    //detail ticket-task
     @GetMapping("/ticket-task/{id}")
     public ResponseEntity getDetailTicketTask(@PathVariable("id") Long id){
         TicketTask detailTask = ticketTaskService.getDetailTicketTask(id);
@@ -43,17 +45,20 @@ public class TicketTaskAPIController {
         }
     }
 
+    //create ticket task
     @PostMapping("/ticket-task")
     public ResponseEntity<TicketTaskResponse> saveTicketTask(@RequestBody TicketTaskRequest ticketTaskRequest){
         TicketTaskResponse response =  ticketTaskService.addTicket(ticketTaskRequest);
         return ResponseEntity.ok(response);
     }
 
+    //update ticket-task update status task
     @PutMapping("/ticket-task/update-status/{taskid}")
     public ResponseEntity updateStatusTicketTask(@PathVariable("taskid") Long id, @RequestBody UpdateTicketTaskStatusRequest updateTicketTaskStatusRequest){
         return ResponseEntity.ok(ticketTaskService.updateTicketStatus(id, updateTicketTaskStatusRequest));
     }
 
+    //update ticket-task
     @PutMapping("/ticket-status/{taskid}")
     public ResponseEntity updateTicketTask(@PathVariable("taskid") Long id, @RequestBody TicketTaskRequest updateTiketTask){
         return ResponseEntity.ok(ticketTaskService.updateTicket(id, updateTiketTask));
