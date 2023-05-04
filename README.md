@@ -7,5 +7,5 @@
  - Mysql
  - RabbitMQ/SpringAMQP/Firebase
 # Screenshoots
- - dashboard page![dashboard](./screenshoot/home_page.png)
+ - Dashboard page![dashboard](./screenshoot/home_page.png)
 
