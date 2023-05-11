@@ -3,13 +3,13 @@
 # Access dashboard page
  > For access the main dashbord just locate your browser into ```http://localhost:8080/```
 # Tech stack
- - Springboot
- - Mysql
- - RabbitMQ/SpringAMQP/Firebase
+   - Springboot
+   - Mysql
+   - RabbitMQ/SpringAMQP/Firebase
 # API Controller
-- For API Controller could be see in folder ```src/main/java/eight/java/spring/data/controller/api```
-# Screenshoots
- - Dashboard page![dashboard](./screenshoot/home_page.png)
+   - For API Controller could be see in folder ```src/main/java/eight/java/spring/data/controller/api```
 # Postman Collections
- - For postman collection could be see in ```collections``` directory
+  - For postman collection could be see in ```collections``` directory
+# Screenshoots
+    - Dashboard page![dashboard](./screenshoot/home_page.png)
 
