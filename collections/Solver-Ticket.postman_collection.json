@@ -1,0 +1,1246 @@
+{
+	"info": {
+		"_postman_id": "eecdc1f2-7134-48a4-ba96-84f7741d9bba",
+		"name": "Solver-Ticket",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Team Solver",
+			"item": [
+				{
+					"name": "Get Team Solver",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "Get Team Solver",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/team-solver",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"team-solver"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 May 2023 04:25:28 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Reinhart Simanjuntak\",\n        \"birthDate\": \"1987-12-12T17:00:00.000+00:00\",\n        \"gender\": \"pria\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Detail Team By Id",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "Not Found Detail Team",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/team-solver/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"team-solver",
+										"1"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 May 2023 04:21:46 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"message\": \"Team Solver not found\"\n}"
+						},
+						{
+							"name": "Success Found Detail Team",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/team-solver/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"team-solver",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 May 2023 04:26:14 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"name\": \"Reinhart Simanjuntak\",\n    \"birthDate\": \"1987-12-12T17:00:00.000+00:00\",\n    \"gender\": \"pria\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Team Solver",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Reinhart Simanjuntak\",\n    \"birtDate\":\"1987-12-13\",\n    \"gender\":\"pria\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/team-solver",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"team-solver"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add Team Solver",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\":\"Reinhart Simanjuntak\",\n    \"birtDate\":\"1987-12-13\",\n    \"gender\":\"pria\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/team-solver",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"team-solver"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 May 2023 04:25:12 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Team successfully added\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Team Solver",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Reinhart Natanael\",\n    \"birtDate\":\"2000-10-10\",\n    \"gender\":\"wanita\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/team-solver/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"team-solver",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Update Team Solver",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\":\"Reinhart Natanael\",\n    \"birtDate\":\"2000-10-10\",\n    \"gender\":\"wanita\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/team-solver/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"team-solver",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 May 2023 04:28:23 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Update team solver is succeed\"\n}"
+						},
+						{
+							"name": "Failed Update Team Solver",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\":\"Reinhart Natanael\",\n    \"birtDate\":\"2000-10-10\",\n    \"gender\":\"wanita\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/team-solver/2",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"team-solver",
+										"2"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 May 2023 04:28:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"message\": \"Failed update team solver\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Assign Ticket to Team",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[1,5, 10]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/team-solver/assign/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"team-solver",
+								"assign",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Assign Ticket to Team",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[1]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/team-solver/assign/3",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"team-solver",
+										"assign",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 May 2023 05:26:24 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Team has assign to ticket\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Team Solver Copy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Reinhart Natanael\",\n    \"birtDate\":\"2000-10-10\",\n    \"gender\":\"wanita\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/team-solver/10",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"team-solver",
+								"10"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Failed Delete Team Solver",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\":\"Reinhart Natanael\",\n    \"birtDate\":\"2000-10-10\",\n    \"gender\":\"wanita\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/team-solver/10",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"team-solver",
+										"10"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 May 2023 04:31:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"message\": \"Team solver failed deleted\"\n}"
+						},
+						{
+							"name": "Success Delete Team Solver",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\":\"Reinhart Natanael\",\n    \"birtDate\":\"2000-10-10\",\n    \"gender\":\"wanita\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/team-solver/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"team-solver",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 May 2023 04:32:20 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Team solver deleted\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Ticket Task",
+			"item": [
+				{
+					"name": "List Ticket Task",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "List Ticket Task",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/ticket-tasks",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"ticket-tasks"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 May 2023 05:15:03 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 2,\n        \"title\": \"Testing\",\n        \"descriptions\": \"Coba\",\n        \"latitude\": -1.27179,\n        \"longitude\": 116.815,\n        \"teamSolverList\": [],\n        \"solved\": false\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get Detail Ticket Task",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/ticket-task/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ticket-task",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Detail Task Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/ticket-task/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"ticket-task",
+										"1"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 May 2023 04:46:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"message\": \"Tiket task not found\"\n}"
+						},
+						{
+							"name": "Succes Get Detail Ticket Task",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/ticket-task/2",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"ticket-task",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 May 2023 05:15:24 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"title\": \"Testing\",\n    \"descriptions\": \"Coba\",\n    \"latitude\": -1.27179,\n    \"longitude\": 116.815,\n    \"teamSolverList\": [],\n    \"solved\": false\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Ticket Task",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"Testing\",\n    \"description\":\"Coba\",\n    \"isSolved\":true,\n    \"latitude\":-1.271794,\n    \"longitude\":116.8153172\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/ticket-status/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ticket-status",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Succes update new tickets",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\":\"Testing\",\n    \"description\":\"Coba\",\n    \"isSolved\":false,\n    \"latitude\":-1.271794,\n    \"longitude\":116.8153172\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080//ticket-status/3",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"",
+										"ticket-status",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 May 2023 05:14:13 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"title\": \"Testing\",\n    \"descriptions\": \"Coba\",\n    \"latitude\": -1.271794,\n    \"longitude\": 0,\n    \"solved\": false\n}"
+						},
+						{
+							"name": "Failed Update Ticket",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\":\"Testing\",\n    \"description\":\"Coba\",\n    \"isSolved\":true,\n    \"latitude\":-1.271794,\n    \"longitude\":116.8153172\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/ticket-status/3",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"ticket-status",
+										"3"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 May 2023 05:18:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"timestamp\": \"2023-05-11T05:18:41.718+00:00\",\n    \"status\": 500,\n    \"error\": \"Internal Server Error\",\n    \"path\": \"/ticket-status/3\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Ticket Task",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"Testing\",\n    \"description\":\"Coba\",\n    \"isSolved\":true,\n    \"latitude\":-1.271794,\n    \"longitude\":116.8153172\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/ticket-task/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ticket-task",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Failed Delete Ticket Task",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\":\"Testing\",\n    \"description\":\"Coba\",\n    \"isSolved\":true,\n    \"latitude\":-1.271794,\n    \"longitude\":116.8153172\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/ticket-task/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"ticket-task",
+										"1"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 May 2023 05:22:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"message\": \"Ticket not found for id :1\"\n}"
+						},
+						{
+							"name": "Success Delete Ticket Task",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\":\"Testing\",\n    \"description\":\"Coba\",\n    \"isSolved\":true,\n    \"latitude\":-1.271794,\n    \"longitude\":116.8153172\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/ticket-task/2",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"ticket-task",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 May 2023 05:24:11 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Successfully for delete the ticket\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Status Ticket Task",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"Testing\",\n    \"description\":\"Coba\",\n    \"isSolved\":false,\n    \"latitude\":-1.271794,\n    \"longitude\":116.8153172\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/ticket-task/update-status/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ticket-task",
+								"update-status",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Succes update new tickets",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\":\"Testing\",\n    \"description\":\"Coba\",\n    \"isSolved\":false,\n    \"latitude\":-1.271794,\n    \"longitude\":116.8153172\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080//ticket-status/3",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"",
+										"ticket-status",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 May 2023 05:14:13 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"title\": \"Testing\",\n    \"descriptions\": \"Coba\",\n    \"latitude\": -1.271794,\n    \"longitude\": 0,\n    \"solved\": false\n}"
+						},
+						{
+							"name": "Failed update Status Ticket Task",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\":\"Testing\",\n    \"description\":\"Coba\",\n    \"isSolved\":false,\n    \"latitude\":-1.271794,\n    \"longitude\":116.8153172\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/ticket-task/update-status/3",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"ticket-task",
+										"update-status",
+										"3"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 May 2023 05:21:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"timestamp\": \"2023-05-11T05:21:46.735+00:00\",\n    \"status\": 500,\n    \"error\": \"Internal Server Error\",\n    \"path\": \"/ticket-task/update-status/3\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create New Ticket Task Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"Testing\",\n    \"description\":\"Coba\",\n    \"isSolved\":false,\n    \"latitude\":-1.271794,\n    \"longitude\":116.8153172\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/ticket-task",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ticket-task"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Succes create new tickets",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\":\"Testing\",\n    \"description\":\"Coba\",\n    \"isSolved\":false,\n    \"latitude\":-1.271794,\n    \"longitude\":116.8153172\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/ticket-task",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"ticket-task"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 May 2023 05:14:13 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"title\": \"Testing\",\n    \"descriptions\": \"Coba\",\n    \"latitude\": -1.271794,\n    \"longitude\": 0,\n    \"solved\": false\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

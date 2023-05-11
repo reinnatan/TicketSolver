@@ -39,7 +39,11 @@ public class TicketTaskAPIController {
     public ResponseEntity getDetailTicketTask(@PathVariable("id") Long id){
         TicketTask detailTask = ticketTaskService.getDetailTicketTask(id);
         if (detailTask ==null){
-            return ResponseEntity.notFound().build();
+            GeneralResponse generalResponse = new GeneralResponse();
+            generalResponse.setMessage("Tiket task not found");
+            generalResponse.setStatus(false);
+
+            return ResponseEntity.badRequest().body(generalResponse);
         }else{
             return ResponseEntity.ok(detailTask);
         }
