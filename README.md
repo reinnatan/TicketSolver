@@ -11,5 +11,5 @@
 # Postman Collections
   - For postman collection could be see in ```collections``` directory
 # Screenshoots
-    - Dashboard page![dashboard](./screenshoot/home_page.png)
+  - Dashboard page![dashboard](./screenshoot/home_page.png)
 
