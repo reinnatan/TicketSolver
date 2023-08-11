@@ -2,11 +2,13 @@ package eight.java.spring.data.service;
 
 
 import eight.java.spring.data.entity.TicketTask;
+import eight.java.spring.data.entity.User;
 import eight.java.spring.data.request.ticket.TicketTaskRequest;
 import eight.java.spring.data.request.ticket.UpdateTicketTaskStatusRequest;
 import eight.java.spring.data.responses.GeneralResponse;
 import eight.java.spring.data.responses.TicketTaskResponse;
 import eight.java.spring.data.respository.TicketTaskRepository;
+import eight.java.spring.data.respository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +19,9 @@ public class TicketTaskService {
 
     @Autowired
     private TicketTaskRepository ticketTaskRepository;
+
+    @Autowired
+    private UserRepository userRepository;
 
     public List<TicketTask> getAllTicketTasks(){
         return ticketTaskRepository.findAll();
@@ -29,24 +34,33 @@ public class TicketTaskService {
         return null;
     }
 
-    public TicketTaskResponse addTicket(TicketTaskRequest ticketTaskRequest){
-        TicketTask ticketTask = new TicketTask();
-        ticketTask.setDescriptions(ticketTaskRequest.getDescription());
-        ticketTask.setTitle(ticketTaskRequest.getTitle());
-        ticketTask.setSolved(ticketTaskRequest.isSolved());
-        ticketTask.setLatitude(ticketTaskRequest.getLatitude());
-        ticketTask.setLongitude(ticketTaskRequest.getLongitude());
-        TicketTask responseDB =  ticketTaskRepository.save(ticketTask);
+    public Object addTicket(TicketTaskRequest ticketTaskRequest, String token){
+        User userFind = userRepository.findByToken(token);
+        if(userFind!=null){
+            TicketTask ticketTask = new TicketTask();
+            ticketTask.setDescriptions(ticketTaskRequest.getDescription());
+            ticketTask.setTitle(ticketTaskRequest.getTitle());
+            ticketTask.setSolved(ticketTaskRequest.isSolved());
+            ticketTask.setLatitude(ticketTaskRequest.getLatitude());
+            ticketTask.setLongitude(ticketTaskRequest.getLongitude());
+            ticketTask.setUser(userFind);
+            TicketTask responseDB =  ticketTaskRepository.save(ticketTask);
 
-        TicketTaskResponse responseServer = new TicketTaskResponse();
-        responseServer.setId(responseDB.getId());
-        responseServer.setDescriptions(responseDB.getDescriptions());
-        responseServer.setTitle(responseDB.getTitle());
-        responseServer.setSolved(responseDB.isSolved());
-        responseServer.setLatitude(responseDB.getLatitude());
-        responseDB.setLongitude(responseDB.getLongitude());
+            TicketTaskResponse responseServer = new TicketTaskResponse();
+            responseServer.setId(responseDB.getId());
+            responseServer.setDescriptions(responseDB.getDescriptions());
+            responseServer.setTitle(responseDB.getTitle());
+            responseServer.setSolved(responseDB.isSolved());
+            responseServer.setLatitude(responseDB.getLatitude());
+            responseDB.setLongitude(responseDB.getLongitude());
 
-        return responseServer;
+            return responseServer;
+        }else{
+            GeneralResponse generalResponse = new GeneralResponse();
+            generalResponse.setMessage("Request tidak sah");
+            generalResponse.setStatus(false);
+            return generalResponse;
+        }
     }
 
     public TicketTask updateTicketStatus(Long taskid, UpdateTicketTaskStatusRequest updateTicketTaskStatusRequest){

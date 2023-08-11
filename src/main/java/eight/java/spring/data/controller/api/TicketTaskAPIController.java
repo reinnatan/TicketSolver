@@ -8,6 +8,7 @@ import eight.java.spring.data.responses.GeneralResponse;
 import eight.java.spring.data.responses.TicketTaskResponse;
 import eight.java.spring.data.service.TicketTaskService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -51,8 +52,8 @@ public class TicketTaskAPIController {
 
     //create ticket task
     @PostMapping("/ticket-task")
-    public ResponseEntity<TicketTaskResponse> saveTicketTask(@RequestBody TicketTaskRequest ticketTaskRequest){
-        TicketTaskResponse response =  ticketTaskService.addTicket(ticketTaskRequest);
+    public ResponseEntity saveTicketTask(@RequestParam("token") String token, @RequestBody TicketTaskRequest ticketTaskRequest){
+        Object response =  ticketTaskService.addTicket(ticketTaskRequest, token);
         return ResponseEntity.ok(response);
     }
 
