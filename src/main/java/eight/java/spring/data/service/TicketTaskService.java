@@ -31,7 +31,7 @@ public class TicketTaskService {
 
     public TicketTaskResponse addTicket(TicketTaskRequest ticketTaskRequest){
         TicketTask ticketTask = new TicketTask();
-        ticketTask.setDescriptions(ticketTaskRequest.getDescriptions());
+        ticketTask.setDescriptions(ticketTaskRequest.getDescription());
         ticketTask.setTitle(ticketTaskRequest.getTitle());
         ticketTask.setSolved(ticketTaskRequest.isSolved());
         ticketTask.setLatitude(ticketTaskRequest.getLatitude());
@@ -60,7 +60,7 @@ public class TicketTaskService {
         GeneralResponse generalResponse = new GeneralResponse();
 
         TicketTask updateTicketTask = ticketTaskRepository.findById(taskid).get();
-        updateTicketTask.setDescriptions(updateTicketRequest.getDescriptions());
+        updateTicketTask.setDescriptions(updateTicketRequest.getDescription());
         updateTicketTask.setTitle(updateTicketRequest.getTitle());
         updateTicketTask.setSolved(updateTicketRequest.isSolved());
         updateTicketTask.setLongitude(updateTicketRequest.getLongitude());

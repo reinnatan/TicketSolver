@@ -10,18 +10,31 @@ import javax.persistence.Id;
 import java.util.Date;
 
 @Entity
-public class TeamSolver {
+public class User {
     @Id
     @GeneratedValue
     @Getter @Setter
     private Long id;
     @Column
     @Getter @Setter
+    private String phoneNumber;
+    @Column
+    @Getter @Setter
+    private String password;
+    @Column
+    @Getter @Setter
     private String name;
     @Column
     @Getter @Setter
-    private Date birthDate;
+    private String address;
     @Column
     @Getter @Setter
-    private String gender;
+    private String token;
+    @Column
+    @Getter @Setter
+    private boolean isActive;
+    @Column
+    @Getter @Setter
+    private Date dateBirth;
+
 }

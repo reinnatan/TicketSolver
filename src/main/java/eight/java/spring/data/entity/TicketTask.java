@@ -1,6 +1,9 @@
 package eight.java.spring.data.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import eight.java.spring.data.respository.UserRepository;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.List;
@@ -9,76 +12,28 @@ import java.util.List;
 public class TicketTask {
     @Id
     @GeneratedValue
+    @Getter @Setter
     private Long id;
     @Column
+    @Getter @Setter
     private String title;
     @Column
+    @Getter @Setter
     private String descriptions;
     @Column
+    @Getter @Setter
     private boolean isSolved;
-
     @Column(nullable = true)
+    @Getter @Setter
     private Float latitude;
-
     @Column(nullable = true)
+    @Getter @Setter
     private Float longitude;
-
     @ManyToMany
+    @Getter @Setter
     private List<TeamSolver> teamSolverList;
+    @OneToOne
+    @Getter @Setter
+    private User user;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDescriptions() {
-        return descriptions;
-    }
-
-    public void setDescriptions(String descriptions) {
-        this.descriptions = descriptions;
-    }
-
-    public boolean isSolved() {
-        return isSolved;
-    }
-
-    public void setSolved(boolean solved) {
-        isSolved = solved;
-    }
-
-    public List<TeamSolver> getTeamSolverList() {
-        return teamSolverList;
-    }
-
-    public void setTeamSolverList(List<TeamSolver> teamSolverList) {
-        this.teamSolverList = teamSolverList;
-    }
-
-    public Float getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(Float latitude) {
-        this.latitude = latitude;
-    }
-
-    public Float getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(Float longitude) {
-        this.longitude = longitude;
-    }
 }

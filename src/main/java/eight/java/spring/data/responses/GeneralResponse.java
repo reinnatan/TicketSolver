@@ -1,22 +1,17 @@
 package eight.java.spring.data.responses;
 
+import lombok.Getter;
+import lombok.Setter;
+
+import java.util.Map;
+
 public class GeneralResponse {
-    private boolean status;
-    private String message;
+    @Setter @Getter
+    public boolean status;
+    @Setter @Getter
+    public String message;
+    @Setter @Getter
+    public Map<String, Object> data;
 
-    public boolean isStatus() {
-        return status;
-    }
 
-    public void setStatus(boolean status) {
-        this.status = status;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
 }
