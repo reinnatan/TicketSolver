@@ -1,9 +1,7 @@
 package eight.java.spring.data.controller.api;
 
-import eight.java.spring.data.request.ticket.TicketTaskRequest;
 import eight.java.spring.data.request.user.UserRequest;
 import eight.java.spring.data.responses.GeneralResponse;
-import eight.java.spring.data.service.TicketTaskService;
 import eight.java.spring.data.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
